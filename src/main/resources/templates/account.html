@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>User</title>
+  <link rel="stylesheet" th:href="@{/css/new-account.css}"/>
+</head>
+<body style="background-color: lightyellow; padding: 5vh 10vw;">
+<h1>User Account</h1>
+<div th:object="${account}">
+  <p>E-mail :&nbsp;<strong th:text="*{email}"></strong></p>
+  <p>Name :&nbsp;<strong th:text="*{name}"></strong></p>
+  <p>Balance :&nbsp;<strong th:text="*{balance}"></strong></p>
+</div>
+<a th:href="@{/}">
+  <button>Home</button>
+</a>
+</body>
+</html>

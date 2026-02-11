@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+</head>
+<body style="background-color: lightyellow; padding: 5vh 10vw;">
+<h1>Full Stack Banking App Demo</h1>
+
+<div class="out">
+    <label>View user account:</label>
+    <form class="in" method="get" action="/account">
+        <input placeholder="Enter your email" type="email" name="email" required/>
+        <button>View</button>
+    </form>
+</div>
+<p th:text="${notFound1}" class="red"></p>
+
+<div class="out">
+    <label>View all accounts:</label>
+    <a th:href="@{/all}">
+        <button>View</button>
+    </a>
+</div>
+
+<div class="out">
+    <label>Create new user account:</label>
+    <a th:href="@{/register}">
+        <button>Register</button>
+    </a>
+</div>
+
+<div class="out">
+    <label>Deposit Money:</label>
+    <form class="in" method="post" action="/deposit" >
+        <input placeholder="Enter your email" type="email" name="email" required/>
+        <input placeholder="Amount to deposit" type="number" name="balance" required />
+        <button>Deposit</button>
+    </form>
+</div>
+<p th:text="${notFound2}" class="red"></p>
+<p th:text="${negativeInput2}" class="red"></p>
+
+<div class="out">
+    <label>Withdraw Money:</label>
+    <form class="in" method="post" action="/withdraw" >
+        <input placeholder="Enter your email" type="email" name="email" required />
+        <input placeholder="Amount to withdraw" type="number" name="balance" required />
+        <button>Withdraw</button>
+    </form>
+</div>
+<p th:text="${notFound3}" class="red"></p>
+<p th:text="${negativeInput3}" class="red"></p>
+<p th:text="${insufficient}" class="red"></p>
+
+<div class="out">
+    <label>Delete user account:</label>
+    <form class="in" method="post" action="/">
+        <input placeholder="Enter your email" type="email" name="email" required />
+        <button>Delete</button>
+    </form>
+</div>
+<p th:text="${deletedAccount}" class="green"></p>
+<p th:text="${notFound4}" class="red"></p>
+</body>
+</html>

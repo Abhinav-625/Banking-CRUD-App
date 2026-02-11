@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+</head>
+<body style="background-color: lightyellow; padding: 5vh 10vw;">
+<h1>Enter Account Details</h1>
+<form method="post" th:action="@{/register/new}" th:object="${newAccount}">
+    <div>
+        <label>E-mail:</label>
+        <input type="email" placeholder="Enter your email" th:field="*{email}" required />
+    </div>
+    <div>
+        <label>Account Holder Name:</label>
+        <input type="text" placeholder="Enter your name" th:field="*{name}" required />
+    </div>
+    <div>
+        <label>Deposit initial amount:</label>
+        <input type="number" placeholder="Enter amount to deposit" th:field="*{balance}" />
+    </div>
+    <p th:text="${negativeInput1}"></p>
+    <p th:text="${alreadyExists}"></p>
+    <button type="submit">Create Account</button>
+</form>
+</body>
+</html>

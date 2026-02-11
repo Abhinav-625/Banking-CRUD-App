@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    padding: 3rem 0;
+}
+.out{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: .6rem 0;
+}
+.in{
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+}
+p{
+    display: flex;
+    justify-self: end;
+    font-size: 1rem;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+button{
+    width: 5rem;
+    background-color: cadetblue;
+    height: 1.5rem;
+}
+button:hover{
+    background-color: darkcyan;
+}
+@media (min-width: 800px and max-width: 1000px) {
+    .in{
+        width: 55%;
+    }
+    }
+    @media(min-width: 1000px) {
+    .in{
+        width: 40%;
+    }
+}
